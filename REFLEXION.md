@@ -12,4 +12,4 @@ Es fundamental utilizar etiquetas semánticas como `<main>` y `<nav>` porque per
 
 ## 3. Verificación de las rutas de navegación
 
-Verifiqué las rutas de los enlaces en el entorno local abriendo `index.html` en el navegador y comprobando que el enlace "Acerca de" llevara correctamente a `acercade.html`. Luego, desde `acercade.html`, comprobé que el enlace "Inicio" regresara correctamente a `index.html`. De esta manera confirmé que la navegación funcionaba en ambos sentidos.
+Verifiqué las rutas de los enlaces en el entorno local abriendo `index.html` en el navegador y comprobando que el enlace "Acerca de" llevara correctamente a `acercade.html`. Luego, desde `acercade.html`, comprobé que el enlace "Inicio" regresara correctamente a `index.html`. También realicé la misma comprobación en GitHub Pages y confirmé que ambas rutas funcionaban correctamente.
