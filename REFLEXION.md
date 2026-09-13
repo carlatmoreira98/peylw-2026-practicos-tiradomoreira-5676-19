@@ -1,29 +1,15 @@
-# Reflexión
+# Reflexión Aplicada — Laboratorio 2
 
-## 1. Token Único
+## 1. Imagen y atributo alt
 
-Mi Token Único es:
+La imagen utilizada se llama **diseno_web_ux.png** y está almacenada en la carpeta `img/`.
 
-`tiradomoreira-5676-19`
+El atributo `alt` utilizado es: **"Diseño web y experiencia de usuario"**.
 
-## 2. Salida de git status antes del primer commit
+## 2. Uso de etiquetas semánticas
 
-La salida obtenida fue:
+Es fundamental utilizar etiquetas semánticas como `<main>` y `<nav>` porque permiten organizar el contenido de una página de manera clara y darle un significado a cada parte de la estructura. A diferencia de una etiqueta genérica como `<div>`, estas etiquetas indican qué función cumple cada sección del sitio y facilitan la comprensión del contenido.
 
-```text
-On branch master
+## 3. Verificación de las rutas de navegación
 
-No commits yet
-
-Untracked files:
-  (use "git add <file>..." to include in what will be committed)
-        index.html
-
-nothing added to commit but untracked files present (use "git add" to track)
-```
-
-## 3. Diferencia entre working directory y staging area 
-
-El directorio de trabajo (working directory) es el lugar donde se encuentran los archivos del proyecto y donde realizamos modificaciones.
-
-El área de preparación (staging area) es el espacio intermedio donde seleccionamos los cambios que queremos incluir en el próximo commit. Por ejemplo, al ejecutar `git add index.html`, el archivo pasa del directorio de trabajo al área de preparación y queda listo para ser guardado en el historial mediante un commit.
+Verifiqué las rutas de los enlaces en el entorno local abriendo `index.html` en el navegador y comprobando que el enlace "Acerca de" llevara correctamente a `acercade.html`. Luego, desde `acercade.html`, comprobé que el enlace "Inicio" regresara correctamente a `index.html`. De esta manera confirmé que la navegación funcionaba en ambos sentidos.
