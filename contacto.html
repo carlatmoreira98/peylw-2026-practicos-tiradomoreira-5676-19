@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Contacto - Carla Tirado Moreira</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- TOKEN-ALUMNO: tiradomoreira-5676-19 -->
+
+    <header>
+        <h1>Portal de Carla Tirado Moreira - tiradomoreira-5676-19</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="acercade.html">Acerca de</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section>
+            <h2>Formulario de contacto</h2>
+
+            <form>
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" maxlength="20" required>
+
+                <br><br>
+
+                <label for="apellido">Apellido:</label>
+                <input type="text" id="apellido" name="apellido" maxlength="20">
+
+                <br><br>
+
+                <label for="email">Correo electrónico:</label>
+                <input type="email" id="email" name="email" required>
+
+                <br><br>
+
+                <label for="telefono">Teléfono:</label>
+                <input type="tel" id="telefono" name="telefono" placeholder="Ej: +54 2920 123456">
+
+                <br><br>
+
+                <label for="edad">Edad:</label>
+                <input type="number" id="edad" name="edad" min="16" max="120">
+
+                <br><br>
+
+                <label for="direccion">Dirección:</label>
+                <input type="text" id="direccion" name="direccion">
+
+                <br><br>
+
+                <label for="provincia">Provincia:</label>
+                <input type="text" id="provincia" name="provincia" list="provincias">
+
+                <datalist id="provincias">
+                    <option value="Río Negro">
+                    <option value="Neuquén">
+                    <option value="Chubut">
+                    <option value="Santa Cruz">
+                    <option value="Tierra del Fuego">
+                    <option value="La Pampa">
+                </datalist>
+
+                <br><br>
+
+                <label for="codigo-postal">Código Postal:</label>
+                <input type="text" id="codigo-postal" name="codigo-postal"
+                    pattern="^[A-Z]\d{4}[A-Z]{3}$"
+                    title="Ingrese el código postal con una letra mayúscula, cuatro dígitos y tres letras mayúsculas. Ejemplo: R8500AAF">
+
+                <br><br>
+
+                <p>Método de Contacto Preferido:</p>
+
+                <input type="radio" id="contacto-email" name="metodo-contacto" value="Correo electrónico" checked>
+                <label for="contacto-email">Correo electrónico</label>
+
+                <br>
+
+                <input type="radio" id="contacto-postal" name="metodo-contacto" value="Correo postal">
+                <label for="contacto-postal">Correo postal</label>
+
+                <br>
+
+                <input type="radio" id="contacto-telefono" name="metodo-contacto" value="Teléfono">
+                <label for="contacto-telefono">Teléfono</label>
+
+                <br><br>
+
+                <p>Suscripción de Interés:</p>
+
+                <input type="checkbox" id="noticias" name="suscripciones" value="Noticias">
+                <label for="noticias">Noticias</label>
+
+                <br>
+
+                <input type="checkbox" id="promociones" name="suscripciones" value="Promociones">
+                <label for="promociones">Promociones</label>
+
+                <br>
+
+                <input type="checkbox" id="alertas" name="suscripciones" value="Alertas" checked>
+                <label for="alertas">Alertas</label>
+
+                <br>
+
+                <input type="checkbox" id="eventos" name="suscripciones" value="Eventos">
+                <label for="eventos">Eventos</label>
+
+                <br><br>
+
+                <button type="submit" id="btn-cargar-tiradomoreira-5676-19">Cargar</button>
+                        </form>
+
+            <h2>Resumen de datos</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Campo</th>
+                        <th>Resumen</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>Nombre</td>
+                        <td id="resumen-nombre"></td>
+                    </tr>
+                    <tr>
+                        <td>Apellido</td>
+                        <td id="resumen-apellido"></td>
+                    </tr>
+                    <tr>
+                        <td>Email</td>
+                        <td id="resumen-email"></td>
+                    </tr>
+                    <tr>
+                        <td>Teléfono</td>
+                        <td id="resumen-telefono"></td>
+                    </tr>
+                    <tr>
+                        <td>Edad</td>
+                        <td id="resumen-edad"></td>
+                    </tr>
+                    <tr>
+                        <td>Dirección</td>
+                        <td id="resumen-direccion"></td>
+                    </tr>
+                    <tr>
+                        <td>Provincia</td>
+                        <td id="resumen-provincia"></td>
+                    </tr>
+                    <tr>
+                        <td>CP</td>
+                        <td id="resumen-cp"></td>
+                    </tr>
+                    <tr>
+                        <td>Método de Contacto</td>
+                        <td id="resumen-metodo-contacto"></td>
+                    </tr>
+                    <tr>
+                        <td>Suscripciones</td>
+                        <td id="resumen-suscripciones"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Carla Tirado Moreira</p>
+        <p>CURZAS - UNCo, Viedma, Río Negro</p>
+        <p>Token: tiradomoreira-5676-19</p>
+    </footer>
+
+</body>
+</html>
