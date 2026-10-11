@@ -1,15 +1,21 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Acerca de Carla Tirado Moreira</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+
+<body id="top">
     <!-- TOKEN-ALUMNO: tiradomoreira-5676-19 -->
 
     <header>
         <h1>Portal de Carla Tirado Moreira - tiradomoreira-5676-19</h1>
+        <img src="img/curzas_logo.png"
+             alt="Logo del CURZA"
+             class="logo-curza">
     </header>
 
     <nav>
@@ -21,10 +27,10 @@
     </nav>
 
     <main>
-        <article>
+        <article class="biografia">
 
             <section>
-                <h2>Sobre mí</h2>
+                <h2 class="titulo-sticky">Sobre mí</h2>
                 <p>Mi formación y experiencia están principalmente relacionadas con el diseño. Actualmente estudio la Tecnicatura en Desarrollo Web para ampliar mis conocimientos y acercarme al desarrollo de sitios web, incorporando también conocimientos de programación.</p>
             </section>
 
@@ -48,7 +54,9 @@
             </section>
 
             <figure>
-                <img src="img/diseno_web_ux.png" alt="Diseño web y experiencia de usuario" width="350">
+                <img src="img/diseno_web_ux.png"
+                     alt="Diseño web y experiencia de usuario"
+                     width="350">
                 <figcaption>Representación de mi interés por el diseño web y la experiencia de usuario.</figcaption>
             </figure>
 
@@ -61,5 +69,10 @@
         <p>Token: tiradomoreira-5676-19</p>
     </footer>
 
+    <a class="volver-inicio"
+       href="#top"
+       aria-label="Volver al inicio">▲</a>
+
 </body>
 </html>
+```
