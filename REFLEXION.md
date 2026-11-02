@@ -1,19 +1,21 @@
-# TP4 - Reflexión sobre CSS avanzado y Responsive Design
+# TP5 - Reflexión aplicada: JavaScript y manipulación del DOM
 
-## 1. ¿Cómo se logra la animación de rotación del logo?
+## 1. Código utilizado para validar la edad
 
-La animación se realiza mediante la propiedad `transition`, que permite que la transformación ocurra de manera gradual. Al pasar el cursor sobre el logo, la propiedad `transform: rotateY(360deg)` lo hace girar sobre su eje vertical.
+    const valorEdad = edad.value;
 
-```css
-.logo-curza {
-    transition: transform 1s ease-in-out;
-}
+    if (valorEdad !== "" && Number(valorEdad) < 18) {
+        resumenEdad.innerText = valorEdad + " (Menor de edad)";
+        resumenEdad.style.backgroundColor = "#ffcccc";
+    } else {
+        resumenEdad.innerText = valorEdad;
+        resumenEdad.style.backgroundColor = "";
+    }
 
-.logo-curza:hover {
-    transform: rotateY(360deg);
-}
-```
+## 2. ¿Por qué se utilizó el evento input en lugar de change?
 
-## 2. ¿Por qué es necesario definir un color de fondo en un elemento con `position: sticky`?
+    Se utilizó el evento input porque permite detectar cada modificación que realiza el usuario mientras escribe en un campo. En cambio, el evento change generalmente se ejecuta cuando el usuario termina de modificar el valor y confirma el cambio, por ejemplo, al salir del campo. Por eso, input permite actualizar la tabla en tiempo real.
 
-El color de fondo evita que el texto y los elementos que se desplazan por detrás del título se vean a través de él. Esto mejora la legibilidad y permite distinguir claramente el encabezado mientras permanece fijo durante el desplazamiento.
+## 3. ¿Cómo se evitó que el código genere errores en otras páginas?
+
+    Se utilizaron condiciones para verificar que los elementos existan antes de ejecutar las funciones. Por ejemplo, antes de trabajar con el formulario se comprueba que exista el campo de nombre y su celda de resumen. De esta manera, el código específico de cada página solamente se ejecuta cuando encuentra los elementos correspondientes, evitando errores por referencias nulas (null).desplazamiento.
