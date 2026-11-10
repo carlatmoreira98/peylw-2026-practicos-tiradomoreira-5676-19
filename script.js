@@ -126,3 +126,197 @@ if (botonLeerMas && cvCompleto) {
     });
 
 }
+
+/* PIEDRA, PAPEL O TIJERA */
+
+
+(function () {
+
+    // Verificar que estamos en la página del juego
+    const botonPiedra = document.getElementById(
+        "btn-piedra-tiradomoreira-5676-19"
+    );
+
+    if (!botonPiedra) {
+        return;
+    }
+
+    const botonPapel = document.getElementById(
+        "btn-papel-tiradomoreira-5676-19"
+    );
+
+    const botonTijera = document.getElementById(
+        "btn-tijera-tiradomoreira-5676-19"
+    );
+
+    const botonReiniciar = document.getElementById(
+        "btn-reiniciar-tiradomoreira-5676-19"
+    );
+
+    const textoGanadas = document.getElementById("ganadas");
+    const textoEmpatadas = document.getElementById("empatadas");
+    const textoPerdidas = document.getElementById("perdidas");
+
+    const textoRecord = document.getElementById("record");
+    const textoUsuario = document.getElementById("jugada-usuario");
+    const textoComputadora = document.getElementById(
+        "jugada-computadora"
+    );
+
+    const mensajeResultado = document.getElementById(
+        "mensaje-resultado"
+    );
+
+    const listaHistorial = document.getElementById("historial");
+
+    // Opciones disponibles
+    const opciones = ["Piedra", "Papel", "Tijera"];
+
+    // Estadísticas de la sesión
+    let ganadas = 0;
+    let empatadas = 0;
+    let perdidas = 0;
+
+    // Clave personalizada para guardar el récord
+    const claveRecord = "record-tiradomoreira-5676-19";
+
+    // Recuperar récord guardado
+    let record = Number(localStorage.getItem(claveRecord)) || 0;
+
+    textoRecord.innerText = record + " victorias";
+
+    // Función para actualizar las estadísticas
+    function actualizarEstadisticas() {
+        textoGanadas.innerText = ganadas;
+        textoEmpatadas.innerText = empatadas;
+        textoPerdidas.innerText = perdidas;
+    }
+
+    // Función para guardar y actualizar el récord
+    function actualizarRecord() {
+
+        if (ganadas > record) {
+            record = ganadas;
+
+            localStorage.setItem(claveRecord, record);
+
+            textoRecord.innerText = record + " victorias";
+
+        }
+    }
+
+    // Función principal del juego
+    function jugar(eleccionUsuario) {
+
+        // Elección aleatoria de la computadora
+        const indiceAleatorio = Math.floor(
+            Math.random() * opciones.length
+        );
+
+        const eleccionComputadora = opciones[indiceAleatorio];
+
+        // Mostrar las elecciones
+        textoUsuario.innerText = "Tu elección: " + eleccionUsuario;
+
+        textoComputadora.innerText =
+            "Elección de la computadora: " + eleccionComputadora;
+
+        // Comparar las elecciones
+        let resultado = "";
+
+        if (eleccionUsuario === eleccionComputadora) {
+
+            resultado = "¡Empate!";
+            empatadas++;
+
+        } else if (
+            (eleccionUsuario === "Piedra" &&
+                eleccionComputadora === "Tijera") ||
+
+            (eleccionUsuario === "Papel" &&
+                eleccionComputadora === "Piedra") ||
+
+            (eleccionUsuario === "Tijera" &&
+                eleccionComputadora === "Papel")
+        ) {
+
+            resultado = "¡Ganaste!";
+            ganadas++;
+
+        } else {
+
+            resultado = "¡Perdiste!";
+            perdidas++;
+
+        }
+
+        // Mostrar el resultado
+        mensajeResultado.innerText = resultado;
+
+        // Actualizar estadísticas y récord
+        actualizarEstadisticas();
+        actualizarRecord();
+
+        // Registrar la partida en el historial
+        const nuevaPartida = document.createElement("li");
+
+        nuevaPartida.innerText =
+            eleccionUsuario + " vs " +
+            eleccionComputadora + " - " + resultado;
+
+        listaHistorial.prepend(nuevaPartida);
+
+        // Eliminar el mensaje inicial del historial
+        if (listaHistorial.children.length > 10) {
+            listaHistorial.removeChild(
+                listaHistorial.lastElementChild
+            );
+        }
+
+    }
+
+    // Eventos de los botones
+    botonPiedra.addEventListener("click", function () {
+        jugar("Piedra");
+    });
+
+    botonPapel.addEventListener("click", function () {
+        jugar("Papel");
+    });
+
+    botonTijera.addEventListener("click", function () {
+        jugar("Tijera");
+    });
+
+    // Reiniciar la sesión
+    botonReiniciar.addEventListener("click", function () {
+
+        ganadas = 0;
+        empatadas = 0;
+        perdidas = 0;
+
+        actualizarEstadisticas();
+
+        textoUsuario.innerText = "Tu elección: -";
+
+        textoComputadora.innerText =
+            "Elección de la computadora: -";
+
+        mensajeResultado.innerText =
+            "¡Hacé tu primera jugada!";
+
+        listaHistorial.innerHTML = "";
+
+        const mensajeInicial = document.createElement("li");
+
+        mensajeInicial.innerText =
+            "Todavía no hay partidas registradas.";
+
+        listaHistorial.appendChild(mensajeInicial);
+
+        // El récord histórico se conserva
+        textoRecord.innerText = record + " victorias";
+
+    });
+
+})();

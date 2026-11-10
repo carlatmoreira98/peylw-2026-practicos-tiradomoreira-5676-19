@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juegos - Carla Tirado Moreira</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body id="top">
+    <!-- TOKEN-ALUMNO: tiradomoreira-5676-19 -->
+
+    <header>
+        <h1>Portal de Carla Tirado Moreira - tiradomoreira-5676-19</h1>
+        <img src="img/curzas_logo.png"
+             alt="Logo del CURZA"
+             class="logo-curza">
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="acercade.html">Acerca de</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="juego.html">Juegos</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="juego-container">
+
+            <h2>Área de Juegos de Carla Tirado Moreira</h2>
+
+            <p>Token: tiradomoreira-5676-19</p>
+
+            <h3>Piedra, papel o tijera</h3>
+
+            <p>¡Jugá contra la computadora y descubrí quién gana!</p>
+
+            <!-- PANEL DE ESTADÍSTICAS -->
+            <div class="estadisticas-juego">
+
+                <div>
+                    <h4>Ganadas</h4>
+                    <p id="ganadas">0</p>
+                </div>
+
+                <div>
+                    <h4>Empatadas</h4>
+                    <p id="empatadas">0</p>
+                </div>
+
+                <div>
+                    <h4>Perdidas</h4>
+                    <p id="perdidas">0</p>
+                </div>
+
+            </div>
+
+            <!-- RÉCORD HISTÓRICO -->
+            <div class="record-juego">
+                <h3>Récord histórico</h3>
+                <p id="record">Cargando récord...</p>
+            </div>
+
+            <!-- ÁREA INTERACTIVA -->
+            <div class="area-juego">
+
+                <h3>Elegí tu jugada</h3>
+
+                <div class="opciones-juego">
+
+                    <button type="button"
+                            id="btn-piedra-tiradomoreira-5676-19">
+                        ✊ Piedra
+                    </button>
+
+                    <button type="button"
+                            id="btn-papel-tiradomoreira-5676-19">
+                        ✋ Papel
+                    </button>
+
+                    <button type="button"
+                            id="btn-tijera-tiradomoreira-5676-19">
+                        ✌️ Tijera
+                    </button>
+
+                </div>
+
+                <!-- RESULTADO DE LA PARTIDA -->
+                <div class="resultado-juego">
+
+                    <p id="jugada-usuario">Tu elección: -</p>
+
+                    <p id="jugada-computadora">
+                        Elección de la computadora: -
+                    </p>
+
+                    <h3 id="mensaje-resultado">
+                        ¡Hacé tu primera jugada!
+                    </h3>
+
+                </div>
+
+            </div>
+
+            <!-- HISTORIAL -->
+            <div class="historial-juego">
+
+                <h3>Historial de partidas</h3>
+
+                <ul id="historial">
+                    <li>Todavía no hay partidas registradas.</li>
+                </ul>
+
+            </div>
+
+            <!-- BOTÓN DE REINICIO -->
+            <button type="button"
+                    id="btn-reiniciar-tiradomoreira-5676-19">
+                Reiniciar partida
+            </button>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Carla Tirado Moreira</p>
+        <p>CURZAS - UNCo, Viedma, Río Negro</p>
+        <p>Token: tiradomoreira-5676-19</p>
+    </footer>
+
+    <a class="volver-inicio"
+       href="#top"
+       aria-label="Volver al inicio">▲</a>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

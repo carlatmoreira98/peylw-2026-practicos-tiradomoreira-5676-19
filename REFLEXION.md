@@ -1,21 +1,18 @@
-# TP5 - Reflexión aplicada: JavaScript y manipulación del DOM
+# TP6 - Reflexión aplicada
 
-## 1. Código utilizado para validar la edad
+## 1. ¿Cuál fue la opción de juego seleccionada?
 
-    const valorEdad = edad.value;
+    Se seleccionó la opción 4: Piedra, Papel o Tijera. El juego permite competir contra la computadora mediante elecciones aleatorias y registrar las partidas ganadas, empatadas y perdidas.
 
-    if (valorEdad !== "" && Number(valorEdad) < 18) {
-        resumenEdad.innerText = valorEdad + " (Menor de edad)";
-        resumenEdad.style.backgroundColor = "#ffcccc";
-    } else {
-        resumenEdad.innerText = valorEdad;
-        resumenEdad.style.backgroundColor = "";
+## 2. Código utilizado para guardar y recuperar el récord
+
+    let record = Number(localStorage.getItem(claveRecord)) || 0;
+
+    if (ganadas > record) {
+        record = ganadas;
+        localStorage.setItem(claveRecord, record);
     }
 
-## 2. ¿Por qué se utilizó el evento input en lugar de change?
+## 3. ¿Cómo se evitó que el usuario pudiera acceder fácilmente a las respuestas mediante la consola?
 
-    Se utilizó el evento input porque permite detectar cada modificación que realiza el usuario mientras escribe en un campo. En cambio, el evento change generalmente se ejecuta cuando el usuario termina de modificar el valor y confirma el cambio, por ejemplo, al salir del campo. Por eso, input permite actualizar la tabla en tiempo real.
-
-## 3. ¿Cómo se evitó que el código genere errores en otras páginas?
-
-    Se utilizaron condiciones para verificar que los elementos existan antes de ejecutar las funciones. Por ejemplo, antes de trabajar con el formulario se comprueba que exista el campo de nombre y su celda de resumen. De esta manera, el código específico de cada página solamente se ejecuta cuando encuentra los elementos correspondientes, evitando errores por referencias nulas (null).desplazamiento.
+    Se utilizó una función autoejecutable para mantener las variables y funciones del juego dentro de un ámbito local. De esta manera, las variables no quedan disponibles directamente en el ámbito global de JavaScript. También se genera la elección de la computadora dentro de la función que procesa cada partida.
